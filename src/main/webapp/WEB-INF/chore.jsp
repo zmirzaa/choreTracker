@@ -14,9 +14,17 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
+	<nav id="navbar" class="navbar navbar-light px-3 border-bottom">
+	 	<div class="title">
+		    <h1>ChoreTracker</h1>    
+	    </div>
+	    <div>
+		    <a href="/dashboard" class="btn btn-warning">Back</a>
+		    <a href="/logout" class="btn btn-warning">logout</a>  
+	    </div>
+	</nav>
 		<div class="col-md-10 mx-auto col-lg-5">
-	       			<form:form class="p-4 p-md-5 border rounded-3 bg-dark" action="/createChore" method="post" modelAttribute="chore">
+	       			<form:form class="p-4 p-md-5 border rounded-3 bg-dark mt-4" action="/createChore" method="post" modelAttribute="chore">
 	        		  	<form:input value="${loginUser.id}" path="choreCreator" type="hidden"/>
 	        		  	  <div>
 			          	<form:errors class="text-danger" path="choreTitle"/>
@@ -39,7 +47,7 @@
 			            <form:input path="description" class="form-control" id="floatingInput"/>
 			            <form:label for="floatingInput" path="description">Description</form:label>
 			          </div>
-			          <button class="w-100 btn btn-lg btn-primary" type="submit">Post</button>
+			          <button class="w-100 btn btn-lg btn-warning" type="submit">Add</button>
 			          </form:form>
 			         </div>
 
