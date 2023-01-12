@@ -27,6 +27,26 @@
 		    <a href="/logout" class="btn btn-warning">logout</a>  
 	    </div>
 	</nav>
+	<form:form class="search-bar mx-auto" action="/searchMovie" method="post">
+					<input type="search" class="search-field" id="movieName" name="movieName" placeholder="Movie Title"/>
+					<button type="submit" class="mag-button"><img src="/img/search-dark.png" alt="mag-glass" class="mag-glass"></button>
+					</form:form>
+	<c:forEach items='${results}' var='movie'> 
+	<div class="card">
+	<h3>
+		Title: ${movie.getString("Title")} 
+	</h3>
+	
+	<h6>
+		Year: ${movie.getString("Year")} 
+	</h6>
+	<img src="${movie.getString('Poster')}"/>
+	
+	</div>
+	
+	</c:forEach>
+	
+	
 	<h4 class="text-center mt-2">Your Chores</h4> 
 	<c:forEach var="chore" items="${allChores}">
 	<div class="card mb-2">
